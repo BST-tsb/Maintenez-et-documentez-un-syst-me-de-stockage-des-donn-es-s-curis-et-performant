@@ -1,8 +1,8 @@
-\# 🏥 Migration de données médicales vers MongoDB
+🏥 Migration de données médicales vers MongoDB
 
 
 
-\## 📌 Contexte
+📌 Contexte
 
 
 
@@ -10,35 +10,32 @@ Dans le cadre d’un projet Data Engineering, l’objectif est de migrer un data
 
 
 
-\---
 
 
 
-\## ⚙️ Technologies utilisées
+⚙️ Technologies utilisées
 
 
 
-\- Python
+- Python
 
-\- MongoDB
+- MongoDB
 
-\- Pandas
+- Pandas
 
-\- PyMongo
+- PyMongo
 
-\- Docker
-
-
-
-\---
+- Docker
 
 
 
-\## 📂 Structure du projet
 
-projet\_mongodb/
 
-├── healthcare\_dataset.csv
+📂 Structure du projet
+
+projet_mongodb
+
+├── healthcare_dataset.csv
 
 ├── explore.py
 
@@ -58,93 +55,74 @@ projet\_mongodb/
 
 
 
-\---
 
 
 
-\## 🔍 Analyse des données
+🔍 Analyse des données
 
 
 
-\- Dataset de \*\*55 500 lignes\*\*
+Dataset de 55 500 lignes
 
-\- \*\*Aucune valeur manquante\*\*
+Aucune valeur manquante
 
-\- Types de données cohérents
+Types de données cohérents
 
-\- Présence de doublons
-
-
-
-\---
+Présence de doublons
 
 
 
-\## 🧹 Nettoyage des données
+
+
+🧹 Nettoyage des données
 
 
 
-\- Suppression des doublons
+Suppression des doublons
 
-\- Conversion des dates (`Date of Admission`, `Discharge Date`) en datetime
+Conversion des dates (`Date of Admission`, `Discharge Date`) en datetime
 
 
 
 Après nettoyage :
 
-➡️ \*\*54 966 enregistrements\*\*
+54 966 enregistrements
 
 
 
-\---
 
 
 
-\## 🗄️ Modélisation MongoDB
+
+🗄️ Modélisation MongoDB
 
 
 
-\- \*\*Base de données\*\* : `healthcare\_db`
+Base de données : `healthcare\_db`
 
-\- \*\*Collection\*\* : `patients`
-
-
-
-Chaque ligne du dataset est convertie en \*\*document JSON\*\*
+Collection: `patients`
 
 
 
-\---
+Chaque ligne du dataset est convertie en document JSON
 
 
 
-\## 🔄 Processus de migration
 
 
 
-1\. Chargement du fichier CSV avec Pandas
 
-2\. Nettoyage des données
-
-3\. Transformation en dictionnaire
-
-4\. Insertion dans MongoDB via PyMongo
+🔄 Processus de migration
 
 
 
-\---
+1Chargement du fichier CSV avec Pandas
+
+2Nettoyage des données
+
+3Transformation en dictionnaire
+
+4Insertion dans MongoDB via PyMongo
 
 
-
-\## ▶️ Exécution
-
-
-
-Lancer la migration :
-
-
-
-```bash
-
-python migration.py
 
