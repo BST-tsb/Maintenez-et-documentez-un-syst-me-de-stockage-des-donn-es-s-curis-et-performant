@@ -126,3 +126,26 @@ Chaque ligne du dataset est convertie en document JSON
 
 
 
+👍 Sécurisation de MongoDB
+
+Afin de sécuriser l'accès à la base de données MongoDB, l'authentification a été activée dans le fichier mongod.cfg :
+
+security:
+  authorization: enabled
+
+Deux utilisateurs ont été créés :
+
+Administrateur
+Utilisateur : admin
+Rôle : root
+
+Cet utilisateur possède tous les droits sur le serveur MongoDB.
+
+Utilisateur lecture seule
+Utilisateur : reader_user
+Rôle : read
+Base : healthcare_db
+
+Cet utilisateur peut consulter les données mais ne peut pas les modifier ni les supprimer.
+
+
