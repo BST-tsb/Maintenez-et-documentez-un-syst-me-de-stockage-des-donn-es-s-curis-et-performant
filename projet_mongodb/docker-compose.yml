@@ -6,6 +6,8 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - healthcare_network
 
   python:
     image: python:3.12
@@ -17,6 +19,12 @@ services:
       bash -c "sleep 5 && pip install -r requirements.txt && python migration.py"
     depends_on:
       - mongo
+    networks:
+      - healthcare_network
 
 volumes:
   mongo_data:
+
+networks:
+  healthcare_network:
+    driver: bridge
